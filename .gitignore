@@ -1,0 +1,21 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode
+.vscode/
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+
+# 환경 파일
+*.env
+.env
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
