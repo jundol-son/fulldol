@@ -4,6 +4,7 @@ from db.database import SessionLocal
 from db import models
 from datetime import datetime
 from services.strategy_executor import CONDITION_EXECUTORS
+import json
 
 router = APIRouter(prefix="/auto-buy", tags=["AutoBuy Runner"])
 
@@ -52,7 +53,7 @@ def run_auto_strategies(db: Session = Depends(get_db)):
             "code": strategy.code,
             "name": strategy.name,
             "side": strategy.side,
-            "condition_value": strategy.condition_value,
+            "condition_value": json.loads(strategy.condition_value) if isinstance(strategy.condition_value, str) else strategy.condition_value,
             "quantity": strategy.quantity,
             "unit_price": strategy.unit_price,
         }
