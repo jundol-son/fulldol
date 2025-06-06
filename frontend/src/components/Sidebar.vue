@@ -10,6 +10,11 @@
       <RouterLink to="/board" class="hover:text-blue-500">📄 게시판</RouterLink>
       <RouterLink to="/write" class="hover:text-blue-500">✍️ 새 글 작성</RouterLink>
       <RouterLink to="/mypage" class="hover:text-blue-500">👤 마이페이지</RouterLink>
+      <RouterLink to="/balance" class="hover:text-blue-500">👤 잔고</RouterLink>
+      <RouterLink to="/trade" class="hover:text-blue-500">📈 매수/매도 페이지</RouterLink>
+      <RouterLink to="/tradehistory" class="hover:text-blue-500">📊 거래 내역</RouterLink>
+      <RouterLink to="/autobuy" class="hover:text-blue-500">🤖 자동매수</RouterLink>
+      <RouterLink to="/autobuycondition" class="hover:text-blue-500">🛠️ 자동매수조건 관리</RouterLink>
     </nav>
   </aside>
 </template>

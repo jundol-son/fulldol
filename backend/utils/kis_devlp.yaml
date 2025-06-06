@@ -1,0 +1,22 @@
+파일명 : kis_devlp.yaml (파일명은 변경 가능 단, kis_devlp.yaml  파일명 지정하는 부분 수정 필요함)
+
+#홈페이지에서 API서비스 신청시 받은 Appkey, Appsecret 값 설정
+#실전투자 (모의투자인 경우 모의투자용 앱키, 앱시크리트 사용)
+paper_app: "PSpr61xGGBuH8zSfgn2EA7GFGSfIdffS4ozx"
+paper_sec: "8fS6JyHMPlifZDbXubnB+BBLaxSsy5D51bABibqS6F28qgcVo0ZLYDTnP5NOttci2zTMIJd/zhwwTdCa47tw9T3BIU1xMRaBfLQuuGJ3KUWEDXtFuvlbt64gZYDrrc2/OkFnncgeQFa9yz2sByzrTIsR5VGxCSHzM5QN5saSsNk331hoeXA="
+
+#계좌번호 앞 8자리
+my_acct: "50139030"
+#계좌번호 뒤 2자리
+my_prod: "01"
+my_paper_stock: "50139030-01"
+
+#실전투자
+#prod: "https://openapi.koreainvestment.com:9443"
+#모의투자
+prod: "https://openapivts.koreainvestment.com:29443"
+
+#디스코드 웹훅 URL
+DISCORD_WEBHOOK_URL: ""
+
+my_agent : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"

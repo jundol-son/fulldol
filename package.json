@@ -3,5 +3,10 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.7"
+  },
+  "dependencies": {
+    "apexcharts": "^4.7.0",
+    "vue3-apexcharts": "^1.8.0",
+    "vue3-select": "^0.1.2"
   }
 }

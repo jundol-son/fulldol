@@ -21,3 +21,7 @@ watchfiles==1.0.5
 websockets==15.0.1
 bycrypt==4.3.0
 passlib==1.7.4
+mojito2==0.1.6
+pandas==2.2.3
+pycryptodome==3.23.0
+finance-datareader==0.9.96
