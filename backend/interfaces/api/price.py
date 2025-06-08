@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Query
 from typing import List
 from schemas.price import PricePoint
-from services.kis_api import get_price_history_service
+from infrastructure.kis_api import get_price_history_service
 
 router = APIRouter(prefix="/kis", tags=["KIS API"])
 

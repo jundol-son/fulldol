@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Body
 from sqlalchemy.orm import Session
-from db.database import SessionLocal
-from db.models import Post
+from infrastructure.database import SessionLocal
+from domain.models import Post
 from schemas.post import PostCreate, PostOut, DeleteRequest
 from typing import List
 

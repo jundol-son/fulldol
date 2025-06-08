@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
-from db.database import SessionLocal
-from db.models import AutoBuyStrategy
+from infrastructure.database import SessionLocal
+from domain.models import AutoBuyStrategy
 from schemas.autobuy import AutoBuyStrategyCreate, AutoBuyStrategyUpdate
 
 router = APIRouter(prefix="/auto-buy", tags=["AutoBuy"])

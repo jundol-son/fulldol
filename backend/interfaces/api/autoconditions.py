@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from db.database import SessionLocal
-from db.models import AutoCondition
+from infrastructure.database import SessionLocal
+from domain.models import AutoCondition
 from schemas.autobuycondition import AutoConditionCreate, AutoConditionOut
 
 router = APIRouter(prefix="/conditions", tags=["조건"])

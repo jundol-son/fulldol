@@ -1,5 +1,5 @@
 from typing import Dict, Any
-from services import kis_api
+from infrastructure import kis_api
 
 
 def execute_condition_limit_buy(strategy: Dict[str, Any]) -> Dict[str, Any]:

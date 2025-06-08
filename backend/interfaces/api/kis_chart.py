@@ -1,6 +1,6 @@
 # routes/kis_chart.py
 from fastapi import APIRouter, Query
-from services.kis_chart import fetch_chart_data
+from infrastructure.kis_chart import fetch_chart_data
 
 router = APIRouter(prefix="/kis", tags=["KIS API"])
 

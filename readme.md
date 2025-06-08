@@ -15,3 +15,8 @@
 | 📁 확장성 대비 | 클린 아키텍처 기반: `domain / usecase / interface / infra` 구조 적용 가능 |
 | 🧪 테스트 전략 | 기능별 로컬 테스트 우선, 추후 유닛테스트 + e2e 테스트 도입 고려 |
 | 📌 기타 유의사항 | - DB는 PostgreSQL 기준<br>- 공통 로직은 `utils/`에 정리<br>- 초기 개발은 한 파일로 작성 후 분리 리팩토링 |
+### Backend structure
+- domain: SQLAlchemy models
+- usecases: business logic
+- interfaces: FastAPI routers and entrypoint
+- infrastructure: DB and external API

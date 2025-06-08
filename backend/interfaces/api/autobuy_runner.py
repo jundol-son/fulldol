@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from db.database import SessionLocal
-from db import models
+from infrastructure.database import SessionLocal
+from domain import models
 from datetime import datetime
-from services.strategy_executor import CONDITION_EXECUTORS
+from usecases.strategy_executor import CONDITION_EXECUTORS
 import json
 
 router = APIRouter(prefix="/auto-buy", tags=["AutoBuy Runner"])

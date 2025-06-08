@@ -1,5 +1,5 @@
 from typing import Dict, Any
-from services import kis_api
+from infrastructure import kis_api
 
 def extract_float(value: Any) -> float:
     """중첩 dict 또는 문자열로 된 수치 값을 float으로 변환"""

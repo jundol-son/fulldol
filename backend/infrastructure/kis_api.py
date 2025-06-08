@@ -10,7 +10,7 @@ import requests
 from dotenv import load_dotenv
 import datetime
 from sqlalchemy.orm import Session
-from db.models import TradeHistory
+from domain.models import TradeHistory
 from datetime import datetime, date
 from typing import List
 from schemas.price import PricePoint
@@ -241,90 +241,6 @@ def is_market_open_for_stock(code: str, market: str):
             "message": f"알 수 없는 시장 구분: {market}",
             "status": "market_error"
         }
-# def is_market_open_for_stock(code: str):
-#     token = get_access_token()
-    
-#     if code.isdigit():
-#         url = f"{BASE_URL}/uapi/domestic-stock/v1/quotations/inquire-asking-price-exp-ccn"
-#         headers = {
-#             "Content-Type": "application/json",
-#             "authorization": f"Bearer {token}",
-#             "appkey": APP_KEY,
-#             "appsecret": APP_SECRET,
-#             "tr_id": "FHKST01010200",
-#             "custtype": "P"
-#         }
-#         params = {
-#             "fid_cond_mrkt_div_code": "J",
-#             "fid_input_iscd": code
-#         }
-
-#         response = requests.get(url, headers=headers, params=params)
-#         response.raise_for_status()
-#         data = response.json()
-#         print("📦 Raw output(KR):", data)
-
-#         output2 = data.get("output2", {})
-#         price = output2.get("stck_prpr", "")
-
-#         output1 = data.get("output1", {})
-#         market_code = output1.get("new_mkop_cls_code", "")
-#         market_open = market_code == "20"
-
-#         msg = data.get("msg1", "처리결과 없음")
-
-#         return {
-#             "market_open": market_open,
-#             "current_price": price,
-#             "message": "장 운영 중입니다." if market_open else "국내 장이 열려있지 않습니다.",
-#             "status": msg
-#         }
-#     else:
-#         # 미국주식
-#         url = f"{BASE_URL}/uapi/overseas-price/v1/quotations/dailyprice"
-#         today = datetime.today().date().strftime("%Y%m%d")
-#         headers = {
-#             "authorization": f"Bearer {token}",
-#             "appkey": APP_KEY,
-#             "appsecret": APP_SECRET,
-#             "tr_id": "HHDFS76240000",
-#             "custtype": "P"
-#         }
-#         params = {
-#             "GUBN": "0",
-#             "EXCD": "NASD",      # 예: NASDAQ
-#             "SYMB": code,        # 예: AAPL, MSFT 등
-#             "BYMD": today,        # ✅ 기준일자 필수
-#             "MODP": "0"
-#         }
-
-#         response = requests.get(url, headers=headers, params=params)
-#         response.raise_for_status()
-#         data = response.json()
-#         print("📦 Raw output (US):", data)
-
-#         prices = data.get("output", [])
-
-#         if prices:
-#             today_price = prices[0]
-#             return {
-#                 "market_open": True,
-#                 "date": today_price.get("bas_dt"),
-#                 "open_price": today_price.get("stck_oprc"),
-#                 "high_price": today_price.get("stck_hgpr"),
-#                 "low_price": today_price.get("stck_lwpr"),
-#                 "close_price": today_price.get("stck_clpr"),
-#                 "message": "미국 장 운영 중입니다.",
-#                 "status": data.get("msg1", "")
-#             }
-#         else:
-#             return {
-#                 "market_open": False,
-#                 "message": "미국 장이 열려있지 않거나 데이터가 없습니다.",
-#                 "date": today,
-#                 "close_price": "-",
-#                 "status": data.get("msg1", "")
-#             }
 
 
 
@@ -355,7 +271,7 @@ def order_stock(code: str, price: int, qty: int, side: str = "buy") -> dict:
         }
     
 def save_trade(db: Session, trade_data: dict):
-    from db.models import TradeHistory
+    from domain.models import TradeHistory
     trade = TradeHistory(**trade_data)
     db.add(trade)
     db.commit()
