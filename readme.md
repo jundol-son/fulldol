@@ -20,3 +20,4 @@
 - usecases: business logic
 - interfaces: FastAPI routers and entrypoint
 - infrastructure: DB and external API
+- 환경 변수 파일(`.env`)에 DB 및 API 키 정보를 저장합니다. 샘플은 `.env.example`을 참고하세요.
