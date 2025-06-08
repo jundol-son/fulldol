@@ -10,7 +10,7 @@ import requests
 from dotenv import load_dotenv
 import datetime
 from sqlalchemy.orm import Session
-from db.models import TradeHistory
+from domain.models import TradeHistory
 from datetime import datetime, date
 from typing import List
 from schemas.price import PricePoint
@@ -355,7 +355,7 @@ def order_stock(code: str, price: int, qty: int, side: str = "buy") -> dict:
         }
     
 def save_trade(db: Session, trade_data: dict):
-    from db.models import TradeHistory
+    from domain.models import TradeHistory
     trade = TradeHistory(**trade_data)
     db.add(trade)
     db.commit()

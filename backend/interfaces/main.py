@@ -2,9 +2,19 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import auth, post, trade_router, price, kis_chart, stock, autobuy, autoconditions, autobuy_runner
-from db.models import Base
-from db.database import engine
+from interfaces.api import (
+    auth,
+    post,
+    trade_router,
+    price,
+    kis_chart,
+    stock,
+    autobuy,
+    autoconditions,
+    autobuy_runner,
+)
+from domain.models import Base
+from infrastructure.database import engine
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)

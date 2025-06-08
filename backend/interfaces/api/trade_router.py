@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Query, HTTPException, Depends
 from pydantic import BaseModel
-from services import kis_api
+from infrastructure import kis_api
 from sqlalchemy.orm import Session
-from db.database import SessionLocal
+from infrastructure.database import SessionLocal
 from schemas.trade import TradeOut
 from typing import List, Optional
 
